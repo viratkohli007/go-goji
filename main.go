@@ -5,7 +5,7 @@ import (
        "github.com/zenazn/goji"
        "github.com/zenazn/goji/web"
        "html/template"
-       "go-goji/funcs"
+       "go-goji/src"
        //"regexp"
        )
 
