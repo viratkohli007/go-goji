@@ -8,7 +8,7 @@ import (
         "html/template"
       _ "github.com/go-sql-driver/mysql"
         //"sort"
-      "regexp"
+      //"regexp"
        )
 
 type Formst struct{
@@ -41,14 +41,14 @@ func Dbconn() *sql.DB{
 }
 
   func Display(c web.C, w http.ResponseWriter, r *http.Request) {
-   flag := false
-      if m, _ := regexp.MatchString(`^([\w\.\_]{2,10})@(\w{1,}).([a-z]{2,4})$`, r.Form.Get("email")); !m {
-        fmt.Println("no")
-    }else{
-        fmt.Println("yes")
-        flag = true
-    }
-    if flag == true{
+   // flag := false
+   //    if m, _ := regexp.MatchString(`^([\w\.\_]{2,10})@(\w{1,}).([a-z]{2,4})$`, r.Form.Get("email")); !m {
+   //      fmt.Println("no")
+   //  }else{
+   //      fmt.Println("yes")
+   //      flag = true
+   //  }
+   //  if flag == true{
    db2 := Dbconn()
 
    dis := new(Formst)
@@ -65,21 +65,21 @@ func Dbconn() *sql.DB{
 
    t, _:= template.ParseFiles("display.html")
    t.Execute(w, dis)
- }else{
-  fmt.Fprintf(w, `<html>
-            <head>
-            </head>
-            <body>
-            <script type="text/javascript">
-            alert('hahaha')
-            </script>
-            </body>
-            </html>`)
-  t, _:= template.ParseFiles("display.html")
-   t.Execute(w, "")
+ // }else{
+ //  fmt.Fprintf(w, `<html>
+ //            <head>
+ //            </head>
+ //            <body>
+ //            <script type="text/javascript">
+ //            alert('hahaha')
+ //            </script>
+ //            </body>
+ //            </html>`)
+ //  t, _:= template.ParseFiles("display.html")
+ //   t.Execute(w, "")
 
  }
-}
+
 
 func List(c web.C, w http.ResponseWriter, r *http.Request){
 

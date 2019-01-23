@@ -9,12 +9,12 @@
   <h1 class="card-header text-justify">Edit details</h1>
   <div class="container margin">
 
-   <form action="/display2" method="post">
+   <form action="/display2" method="get">
 
 <div class="form-group row">
 <label for="last_name" class="col-lg-2 col-form-label mr-2"></label>
 <div class="col-lg-7">
-<input type="text" class="form-control" name="id2" value="{{ .Id }} " disabled>
+<input type="hidden" class="form-control" name="id2" value="{{ .Id }} " >
 </div>
 </div>
 

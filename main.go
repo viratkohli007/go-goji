@@ -33,6 +33,7 @@ func main() {
       fmt.Println(db2)
 
      goji.Get("/home", home)
+     ///fmt.Println(a)
      goji.Get("/form", form)
      goji.Get("/display", funcs.Display)
      goji.Get("/list", funcs.List)
