@@ -1,0 +1,14 @@
+package: go-goji
+import:
+- package: github.com/go-sql-driver/mysql
+  version: v1.4.1
+- package: github.com/lib/pq
+  version: v1.0.0
+- package: github.com/zenazn/goji
+  version: v1.0
+  subpackages:
+  - web
+- package: goji.io
+  version: v2.0.1
+  subpackages:
+  - pat
